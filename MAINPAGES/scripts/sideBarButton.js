@@ -1,6 +1,10 @@
+const sideMenu = document.getElementById("sideMenu");
+const sidebarTsech = document.querySelector('.sidebar');
 
+sideMenu.addEventListener('click', openMenu);
 
-function toggleSidebar(sidebar) {
+function openMenu(sidebarTsech){
+
     const sidebarTexts = sidebar.querySelectorAll(".sidebar-text"); // Получаем все элементы с классом "sidebar-text"
 
     if (sidebar.style.width === "250px") {
@@ -16,8 +20,5 @@ function toggleSidebar(sidebar) {
         text.style.display = "flex";
       });
     }
-  }
-const sidebar = document.querySelector('.sidebar');
-// Ждем 3 секунды и вызываем функцию для раскрытия сайдбара
-setTimeout(() => toggleSidebar(sidebar), 1000);
-setTimeout(() => toggleSidebar(sidebar), 3000);
+
+}

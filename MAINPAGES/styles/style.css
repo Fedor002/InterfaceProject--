@@ -95,7 +95,7 @@ border-radius: 10px; /* Скругление углов поля */
 /* Стили для сайдбара */
 .sidebar {
       width: 80px;
-      height: 100vh; /* Растягиваем сайдбар на всю высоту окна браузера */
+      height: 80vh; /* Растягиваем сайдбар на всю высоту окна браузера */
       background-color: #f0f0f0; /* Цвет фона сайдбара */
       position: fixed; /* Фиксируем сайдбар */
       left: 0; /* Располагаем слева */
@@ -104,7 +104,13 @@ border-radius: 10px; /* Скругление углов поля */
       padding-top: 40px; /* Отступ сверху */
       background-image: url("../../img/Backround_2.png");
       border-radius: 20px;
+      z-index: 999;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out; /** Chrome & Safari **/
+      -moz-transition: all 0.25s ease-in-out; /** Firefox **/
+      -o-transition: all 0.25s ease-in-out; /** Opera **/
     }
+
 .sidebar img {
       width: 50px; /* Задаем ширину изображения */
       height: 70px; /* Задаем высоту изображения */
@@ -121,7 +127,7 @@ border-radius: 10px; /* Скругление углов поля */
   left: 25px;
 
   transform: translate(-50%, -50%);
-  z-index: -1; /* Устанавливаем z-index, чтобы кружки были под изображениями */
+  z-index: 1; /* Устанавливаем z-index, чтобы кружки были под изображениями */
 }
 
 .icon-container {
@@ -131,6 +137,10 @@ border-radius: 10px; /* Скругление углов поля */
   margin-bottom: 10px;
   margin-left: 10px;
   cursor: pointer;
+  transition: all 1s linear;
+  -webkit-transition: all 1s linear; /** Chrome & Safari **/
+  -moz-transition: all 1s linear; /** Firefox **/
+  -o-transition: all 1s linear; /** Opera **/
 }
 
 .icon-container img {
@@ -143,11 +153,18 @@ border-radius: 10px; /* Скругление углов поля */
 
 .sidebar-text {
   display: none;
-   font-size: 20px; /* Устанавливаем размер шрифта 30px */
-  font-weight: bold; /* Делаем текст полужирным */
-  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: -48px;
   margin-top: -15px;
-  color: #444;
+  color: black;
+  width: 160px;
+  height: 50px;
+  background-color: #d9d9d9;
+  border-radius: 101px;
+  z-index: 0;
+  padding-left: 50px;
+  align-items: center;
 }
 
 /*№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ Стили  карты завода*№№№№№№№№№№№№№№№№№№№/
