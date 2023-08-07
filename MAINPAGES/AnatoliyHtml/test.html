@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap">
+    <title>Karta</title>
+</head>
+<body>
+
+    
+    <!-- Хедер -->
+    <header class="display_flex">
+        <nav class="display_flex navStyle">
+            
+            <!-- Window style -->
+            <div class="blackWhiteBackground display_flex" style="gap: 10px;">
+                <div class="backGroundSwitch">
+                    <div class="whiteElipse"></div>
+                </div>
+                <img src="./svg/moon.svg" alt="dots icon">
+            </div>
+            <!-- Window style -->
+
+            <!-- Find input -->
+            <div>
+            <input placeholder="Поиск" class="findInput icon">
+            </div>
+            <!-- Find input -->
+
+            <!-- Bell svg -->
+            <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left:20px">
+                <path d="M24.75 11C24.75 8.81196 23.8808 6.71354 22.3336 5.16637C20.7865 3.61919 18.688 2.75 16.5 2.75C14.312 2.75 12.2135 3.61919 10.6664 5.16637C9.11919 6.71354 8.25 8.81196 8.25 11C8.25 20.625 4.125 23.375 4.125 23.375H28.875C28.875 23.375 24.75 20.625 24.75 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.8788 28.875C18.6371 29.2917 18.2901 29.6376 17.8726 29.8781C17.4552 30.1186 16.9819 30.2451 16.5001 30.2451C16.0183 30.2451 15.545 30.1186 15.1275 29.8781C14.7101 29.6376 14.3631 29.2917 14.1213 28.875" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                
+            <!-- Bell svg -->
+
+            <!-- Settings svg -->
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_131_1997)">
+                <path d="M16 20C18.2091 20 20 18.2091 20 16C20 13.7909 18.2091 12 16 12C13.7909 12 12 13.7909 12 16C12 18.2091 13.7909 20 16 20Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M25.8666 19.9997C25.6891 20.4018 25.6362 20.8479 25.7146 21.2805C25.793 21.713 25.9992 22.1121 26.3066 22.4263L26.3866 22.5063C26.6345 22.754 26.8312 23.0481 26.9654 23.3718C27.0996 23.6956 27.1687 24.0426 27.1687 24.393C27.1687 24.7434 27.0996 25.0905 26.9654 25.4142C26.8312 25.7379 26.6345 26.032 26.3866 26.2797C26.1389 26.5276 25.8448 26.7243 25.5211 26.8585C25.1974 26.9927 24.8504 27.0618 24.4999 27.0618C24.1495 27.0618 23.8025 26.9927 23.4787 26.8585C23.155 26.7243 22.8609 26.5276 22.6133 26.2797L22.5333 26.1997C22.219 25.8923 21.8199 25.6861 21.3874 25.6077C20.9548 25.5292 20.5087 25.5822 20.1066 25.7597C19.7122 25.9287 19.3759 26.2093 19.139 26.5671C18.9021 26.9248 18.775 27.344 18.7733 27.773V27.9997C18.7733 28.7069 18.4923 29.3852 17.9922 29.8853C17.4921 30.3854 16.8138 30.6663 16.1066 30.6663C15.3993 30.6663 14.7211 30.3854 14.221 29.8853C13.7209 29.3852 13.4399 28.7069 13.4399 27.9997V27.8797C13.4296 27.4383 13.2867 27.0103 13.0299 26.6513C12.7731 26.2922 12.4142 26.0187 11.9999 25.8663C11.5978 25.6889 11.1517 25.6359 10.7191 25.7143C10.2866 25.7928 9.88749 25.999 9.57325 26.3063L9.49325 26.3863C9.24559 26.6343 8.95149 26.831 8.62776 26.9652C8.30403 27.0994 7.95703 27.1684 7.60659 27.1684C7.25614 27.1684 6.90914 27.0994 6.58541 26.9652C6.26168 26.831 5.96758 26.6343 5.71992 26.3863C5.47198 26.1387 5.27529 25.8446 5.14109 25.5208C5.00689 25.1971 4.93782 24.8501 4.93782 24.4997C4.93782 24.1492 5.00689 23.8022 5.14109 23.4785C5.27529 23.1548 5.47198 22.8607 5.71992 22.613L5.79992 22.533C6.1073 22.2188 6.3135 21.8197 6.39192 21.3871C6.47035 20.9546 6.41741 20.5085 6.23992 20.1063C6.0709 19.712 5.79026 19.3757 5.43254 19.1388C5.07482 18.9019 4.65563 18.7747 4.22659 18.773H3.99992C3.29267 18.773 2.6144 18.4921 2.1143 17.992C1.6142 17.4919 1.33325 16.8136 1.33325 16.1063C1.33325 15.3991 1.6142 14.7208 2.1143 14.2207C2.6144 13.7206 3.29267 13.4397 3.99992 13.4397H4.11992C4.56124 13.4294 4.98926 13.2865 5.34832 13.0297C5.70738 12.7729 5.98087 12.414 6.13325 11.9997C6.31074 11.5975 6.36368 11.1514 6.28526 10.7189C6.20683 10.2864 6.00063 9.88725 5.69325 9.57301L5.61325 9.49301C5.36531 9.24535 5.16862 8.95124 5.03443 8.62752C4.90023 8.30379 4.83115 7.95678 4.83115 7.60634C4.83115 7.2559 4.90023 6.9089 5.03443 6.58517C5.16862 6.26144 5.36531 5.96734 5.61325 5.71967C5.86091 5.47174 6.15502 5.27505 6.47874 5.14085C6.80247 5.00665 7.14948 4.93758 7.49992 4.93758C7.85036 4.93758 8.19736 5.00665 8.52109 5.14085C8.84482 5.27505 9.13892 5.47174 9.38659 5.71967L9.46659 5.79967C9.78082 6.10706 10.1799 6.31326 10.6125 6.39168C11.045 6.47011 11.4911 6.41716 11.8933 6.23967H11.9999C12.3943 6.07066 12.7306 5.79002 12.9675 5.43229C13.2044 5.07457 13.3315 4.65539 13.3333 4.22634V3.99967C13.3333 3.29243 13.6142 2.61415 14.1143 2.11406C14.6144 1.61396 15.2927 1.33301 15.9999 1.33301C16.7072 1.33301 17.3854 1.61396 17.8855 2.11406C18.3856 2.61415 18.6666 3.29243 18.6666 3.99967V4.11967C18.6683 4.54872 18.7954 4.96791 19.0323 5.32563C19.2692 5.68335 19.6056 5.96399 19.9999 6.13301C20.4021 6.31049 20.8482 6.36344 21.2807 6.28501C21.7132 6.20659 22.1123 6.00039 22.4266 5.69301L22.5066 5.61301C22.7542 5.36507 23.0484 5.16838 23.3721 5.03418C23.6958 4.89998 24.0428 4.83091 24.3933 4.83091C24.7437 4.83091 25.0907 4.89998 25.4144 5.03418C25.7382 5.16838 26.0323 5.36507 26.2799 5.61301C26.5279 5.86067 26.7245 6.15477 26.8587 6.4785C26.9929 6.80223 27.062 7.14923 27.062 7.49967C27.062 7.85012 26.9929 8.19712 26.8587 8.52085C26.7245 8.84458 26.5279 9.13868 26.2799 9.38634L26.1999 9.46634C25.8925 9.78058 25.6863 10.1797 25.6079 10.6122C25.5295 11.0447 25.5824 11.4909 25.7599 11.893V11.9997C25.9289 12.394 26.2096 12.7304 26.5673 12.9673C26.925 13.2042 27.3442 13.3313 27.7733 13.333H27.9999C28.7072 13.333 29.3854 13.614 29.8855 14.1141C30.3856 14.6142 30.6666 15.2924 30.6666 15.9997C30.6666 16.7069 30.3856 17.3852 29.8855 17.8853C29.3854 18.3854 28.7072 18.6663 27.9999 18.6663H27.8799C27.4509 18.6681 27.0317 18.7952 26.674 19.0321C26.3162 19.269 26.0356 19.6053 25.8666 19.9997Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_131_1997">
+                <rect width="32" height="32" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+            <!-- Settings svg -->
+            <div class="display_flex profileBox">    
+            <!-- ProfileImg -->
+            <div class="photoCircle"></div>
+            <!-- ProfileImg -->
+
+            <!-- DropMenu -->
+            <div class="dropdown">
+                <button class="buttonHeader">Тестер Тестер</button>
+                <div class="dropdown-content display_flex">
+                  <a href="#">Пункт меню 1</a>
+                  <a href="#">Пункт меню 2</a>
+                  <a href="#">Пункт меню 3</a>
+                </div>
+            </div>
+            <!-- DropMenu -->
+            </div>
+        </nav>
+    </header>
+    <!-- Конец хедера -->
+
+    <!-- Сайдбар -->
+    <div class="sidebar" onclick="toggleSidebar(this)">
+        <img src="../../img/logo.png" alt="Изображение">
+    
+        <div class="icon-container">
+        <span class="circle"></span>
+        <img src="../../img/home.png" alt="Иконка 1">
+        <span class="sidebar-text">Домой</span>
+        </div>
+    
+        <div class="icon-container">
+        <span class="circle"></span>
+        <img src="./svg/mail.svg" alt="Иконка 2">
+        <span class="sidebar-text">Почта</span>
+        </div>
+    
+        <div class="icon-container">
+        <span class="circle"></span>
+        <img src="./svg/printer.svg" alt="Иконка 3">
+        <span class="sidebar-text">Документы</span>
+        </div>
+
+        <div class="icon-container">
+            <span class="circle"></span>
+            <img src="./svg/clipboard.svg" alt="Иконка 3">
+            <span class="sidebar-text">Задание</span>
+        </div>
+
+
+        <div class="icon-container">
+            <span class="circle"></span>
+            <img src="./svg/settings.svg" alt="Иконка 3">
+            <span class="sidebar-text">Список цехов</span>
+        </div>
+
+    </div>
+    <!--Конец Сайдбара -->
+
+    <!--Осоновной блок-->
+    <div class="display_flex mainPosition">
+        <div class="mainField">
+            <!--Полоска виджетов-->
+            <div class="vidgetLine">
+                <button type="button" class="func1" data-target="wnd1"> <img src="./img/proizvodstvo.png" class="proizvodstvoImg"> </button>
+                <button type="button" class="func2" data-target="wnd2"> <img src="./img/finance.png" class="financeImg"> </button>
+                <button type="button" class="func3" data-target="wnd3"> <img src="./img/planirovanie.png" class="planirovanieImg"> </button>
+                <button type="button" class="func4" data-target="wnd4"> <img src="./img/personal.avif" class="personalImg"> </button>
+                <button type="button" class="func5 activeButton" data-target="wnd5"> <img src="./img/Ezhednevnik.png" class="ezhednevnikImg"> </button>
+            </div>
+            <!--Полоска виджетов-->
+            <hr>
+            <!--Область окон-->
+            <div class="vidgetContext">
+                <div class="funcDiscription1" id="wnd1"></div>
+                <div class="funcDiscription2" id="wnd2"></div>
+                <div class="funcDiscription3" id="wnd3"></div>
+                <div class="funcDiscription4" id="wnd4"></div>
+                <div class="funcDiscription5 activeBlock" id="wnd5"></div>
+            </div>
+            <!--Область окон-->
+        </div>
+    </div>
+    <!--Осоновной блок-->
+
+    <!--Footer-->
+    <footer class="display_flex">
+        <div class="display_flex foot">
+            <span class="firstBlock">190121, Санкт-Петербург, ул. Лоцманская, 3</span>
+            <img src="./svg/social-media.svg" alt="dots icon" class="secondBlock">
+            <div class="thirdBlock">
+                <p class="footerPhone">+7 (812) 495-26-48</p>
+                <p class="footerEmail">e-mail: office@smtu.ru</p>
+            </div>
+        </div>
+    </footer>
+    <!--Footer-->
+
+</body>
+<script src="../scripts/DirectorScript.js"></script>
+<script src="../scripts/switchBackGround.js"></script>
+<script src="../scripts/sideBarButton.js"></script>
+<script src="../scripts/TsechUpperBar.js"></script>
+<script src="../scripts/testScript.js"></script>
+</html>

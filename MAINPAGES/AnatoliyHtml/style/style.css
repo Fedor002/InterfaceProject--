@@ -12,6 +12,7 @@ footer{
 }
 
 body{
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -120,10 +121,11 @@ body{
 
   .mainPosition{
     justify-content: flex-end;
+    padding-right: 10px;
   } 
 
 .mainField{
-    width: 1362px;
+    width: 92.5%;
     height: 77.3vh;
     background-color: #AC91FA;
     border-radius: 20px;
@@ -134,7 +136,7 @@ body{
 }
 
 .topBar{
-    padding: 20px;
+    padding: 1%;
     gap: 25px;
     height: 5%;
     display: inline-flex;
@@ -263,11 +265,11 @@ body{
 }
 
 .subInputBar{
-    width: 63.5%;
+    width: 100%;
     padding-left: 23px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .Tsekh№{
@@ -298,6 +300,7 @@ body{
     background-color: white;
     border-radius: 20px;
     height: 30px;
+    margin-left: 40%;
 }
 
 
@@ -361,7 +364,7 @@ body{
 .TsekhMap .lineOfEquipment:nth-child(2){
 
     .equipmentIcon:nth-child(2){
-        margin-left: 54vh;
+        margin-left: 22%;
     }
     
 }
@@ -369,7 +372,7 @@ body{
 .TsekhMap .lineOfEquipment:nth-child(3){
 
     .equipmentIcon:nth-child(2){
-        margin-left: 27vh;
+        margin-left: 11%;
     }
     
 }
@@ -377,7 +380,7 @@ body{
 .TsekhMap .lineOfEquipment:nth-child(4){
 
     .equipmentIcon:nth-child(1){
-        margin-left: 27vh;
+        margin-left: 11%;
     }
     
 }
@@ -393,7 +396,7 @@ body{
 .firstBlock{
     color: white;
     font-family: 'Roboto Flex', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
 }
 
   .secondBlock{
@@ -404,7 +407,7 @@ body{
 .thirdBlock{
     color: white;
     font-family: 'Roboto Flex', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     display: inline-block;
     width: 30vh;
 }
@@ -431,4 +434,103 @@ body{
     content: url(../svg/white-email.svg);
     position: relative;
     top: 5px;
+}
+
+
+
+/* Добавочная часть */
+
+.vidgetLine{
+    display: flex;
+    padding: 3% 0px 0px 3%;
+    gap: 20px;
+}
+
+.vidgetLine button{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 2.5px solid black;
+    border-radius: 10px;
+}
+
+.vidgetContext{
+    width: 95%;
+    height: 80%;
+    margin: auto;
+    padding-top: 15px;
+    overflow: hidden;
+}
+
+hr{
+    width: 95%;
+    position: relative;
+    border: 1.5px solid black;
+    border-radius: 10px;
+}
+
+.funcDiscription1,
+.funcDiscription2,
+.funcDiscription3,
+.funcDiscription4,
+.funcDiscription5{
+    width: 99%;
+    height: 95%;
+    background-color: white;
+    border: 2.5px solid black;
+    border-radius: 10px;
+    display: none;
+}
+
+.vidgetLine .activeButton{
+    background-color: #71DC7B;
+}
+
+.vidgetContext .activeBlock{
+    display: block;
+}
+
+.proizvodstvoImg{
+    scale: 1;
+    width: 143.5%;
+    height: 100%;
+    right: 5px;
+    bottom: 0px;
+    position: relative;
+}
+
+.financeImg{
+    scale: 1;
+    width: 143.5%;
+    height: 100%;
+    right: 5px;
+    bottom: 0px;
+    position: relative;
+}
+
+.planirovanieImg{
+    scale: 1;
+    width: 143.5%;
+    height: 100%;
+    right: 5px;
+    bottom: 0px;
+    position: relative;
+}
+
+.personalImg{
+    scale: 1;
+    width: 143.5%;
+    height: 100%;
+    right: 5px;
+    bottom: 0px;
+    position: relative;
+}
+
+.ezhednevnikImg{
+    scale: 1;
+    width: 143.5%;
+    height: 100%;
+    right: 5px;
+    bottom: 0px;
+    position: relative;
 }
