@@ -454,6 +454,10 @@ body{
     border-radius: 10px;
 }
 
+.vidgetLine button:hover{
+    opacity: 0.8;
+}
+
 .vidgetContext{
     width: 95%;
     height: 80%;
