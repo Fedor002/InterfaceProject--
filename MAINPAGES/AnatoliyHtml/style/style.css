@@ -401,7 +401,7 @@ body{
 
   .secondBlock{
     scale: 1;
-    width: 20%;
+    width: 30%;
   }
 
 .thirdBlock{
@@ -486,12 +486,23 @@ hr{
     display: none;
 }
 
+.funcDiscription1.activeButton,
+.funcDiscription2.activeButton,
+.funcDiscription3.activeButton,
+.funcDiscription4.activeButton,
+.funcDiscription5.activeButton{
+    background-color: #71DC7B;
+}
+
 .vidgetLine .activeButton{
     background-color: #71DC7B;
 }
 
 .vidgetContext .activeBlock{
-    display: block;
+    
+    display: flex;
+    flex-direction: row;
+
 }
 
 .proizvodstvoImg{
@@ -537,4 +548,82 @@ hr{
     right: 5px;
     bottom: 0px;
     position: relative;
+}
+
+/* Ежедневник */
+
+.firstBlock table {
+    border-collapse: collapse;
+    border-radius: 10px;    
+    width: 100%;
+    font-size: 20px;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+.funcDiscription5 .firstBlock{
+    width: 100%;
+    color: #000;
+}
+
+.funcDiscription5 .secondBlock{
+    width: 30%;
+    height: 100%;
+    display: none;
+    border-left: 2.5px solid black;
+}
+
+.buttonSet{
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+    padding-left: 5px;
+    width: 90%;
+}
+
+.buttonSet button{
+    width: 200px;
+    height: 30px;
+    background-color: rgba(0, 85, 255, 0.634);
+    border: 2.5px solid black;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.buttonSet button:hover{
+    opacity: 0.8;
+}
+
+/* Боковое окно */
+.secondBlock hr{
+    left: -10px;
+}
+
+
+
+.msgDiscription1, .msgDiscription2{
+    display: none;
+    font-size: 20px;
+}
+
+.activeDiscription{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.textArea{
+    width: 90%;
+    height: 80%;
+}
+.buttonArea{
+    width: 90%;
+    height: 80%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
 }

@@ -128,7 +128,62 @@
                 <div class="funcDiscription2" id="wnd2"></div>
                 <div class="funcDiscription3" id="wnd3"></div>
                 <div class="funcDiscription4" id="wnd4"></div>
-                <div class="funcDiscription5 activeBlock" id="wnd5"></div>
+                <div class="funcDiscription5 activeBlock" id="wnd5">
+                    <!-- Таблица -->
+                    <div class="firstBlock">
+                    <table id="myTable">
+                        <thead>
+                          <tr>
+                            <th onclick="sortTable(0)" style="border-top: 0px; border-left: 0px;">Кому</th>
+                            <th onclick="sortTable(1)" style="border-top: 0px;">От кого</th>
+                            <th onclick="sortTable(2)" style="border-top: 0px;">Статус</th>
+                            <th onclick="sortTable(3)" style="border-top: 0px;">Дата</th>
+                            <th onclick="sortTable(4)" style="border-top: 0px; border-right:0px;">Тип</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-target="msg1">
+                            <td style="border-left: 0px;">Перв. зам</td>
+                            <td>Директор</td>
+                            <td>Не активно</td>
+                            <td>2001-01-02</td>
+                            <td style="border-right: 0px;">Поручение</td>
+                          </tr>
+                          <tr data-target="msg2">
+                            <td style="border-left: 0px;">Директору</td>
+                            <td>Перв. зам</td>
+                            <td>Активно</td>
+                            <td>2001-01-01</td>
+                            <td style="border-right: 0px;">Служебная</td>
+                          </tr>
+                          <!-- Добавьте остальные строки таблицы с данными -->
+                        </tbody>
+                      </table>
+                      
+                      <div class="buttonSet">
+                        <button type="button" class="addRow">Добавить</button>
+                        <button type="button" class="toArchive">В архив</button>
+                        <button type="button" class="changeStatus">Изменить статус</button>
+                        <button type="button" class="addRow">?</button>
+                      </div>
+                    </div>
+                    <!-- Боковое окно -->
+                    <div class="secondBlock">
+                        <div class="msgDiscription1" id="msg1">
+                            <div class="textArea">
+                            <p>Уважаемый!...</p>
+                            <p>Прошу разрешить...</p>
+                            </div>
+                            <hr/>
+                            <div class="buttonArea">
+                                <p style="margin-block-start: 0em;
+                                margin-block-end: 0em;">Файл:</p>
+                                <a href="#">Sz.phg</a>
+                            </div>
+                        </div>
+                        <div class="msgDiscription2" id="msg2"></div>
+                    </div>
+                </div>
             </div>
             <!--Область окон-->
         </div>
