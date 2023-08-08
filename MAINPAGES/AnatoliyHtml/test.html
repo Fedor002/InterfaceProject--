@@ -127,7 +127,38 @@
                 <div class="funcDiscription1" id="wnd1"></div>
                 <div class="funcDiscription2" id="wnd2"></div>
                 <div class="funcDiscription3" id="wnd3"></div>
-                <div class="funcDiscription4" id="wnd4"></div>
+                <div class="funcDiscription4" id="wnd4">
+                    <div class="WorkersBlock">
+                    <table id="myTableWorker">
+                        <thead>
+                          <tr>
+                            <th onclick="sortTableWorker(0)" style="border-top: 0px; border-left: 0px;">Имя</th>
+                            <th onclick="sortTableWorker(1)" style="border-top: 0px;">Статус</th>
+                            <th onclick="sortTableWorker(2)" style="border-top: 0px; border-right:0px;">Должность</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-target="msg1">
+                            <td style="border-left: 0px;"><div class="imgCircle"><img src="./img/userProf.avif"></div><span>Иванов Иван</span></td>
+                            <td>Работает</td>
+                            <td style="border-right: 0px;">Высотник</td>
+                          </tr>
+                          <tr data-target="msg2">
+                            <td style="border-left: 0px;">Иванов Иван</td>
+                            <td>Болеет</td>
+                            <td style="border-right: 0px;">Бригадир</td>
+                          </tr>
+                          <tr data-target="msg2">
+                            <td style="border-left: 0px;">Иванов Иван</td>
+                            <td>В отпуске</td>
+                            <td style="border-right: 0px;">Механик</td>
+                          </tr>
+                          <!-- Добавьте остальные строки таблицы с данными -->
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+                <!-- Ежедневник -->
                 <div class="funcDiscription5 activeBlock" id="wnd5">
                     <!-- Таблица -->
                     <div class="firstBlock">

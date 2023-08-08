@@ -569,6 +569,19 @@ hr{
     color: #000;
 }
 
+
+.WorkersBlock{
+    width: 100%;
+    color: #000;
+}
+
+.WorkersBlock table{
+    border-collapse: collapse;
+    border-radius: 10px;    
+    width: 100%;
+    font-size: 20px;
+}
+
 .funcDiscription5 .secondBlock{
     width: 30%;
     height: 100%;
@@ -626,4 +639,23 @@ hr{
     border: 2px solid black;
     border-radius: 10px;
     padding-left: 10px;
+}
+
+.imgCircle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: #000 solid 2px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.imgCircle img{
+    width: 100%;
+    height: 100%;
+}
+
+.WorkersBlock span{
+    position: relative;
+    bottom: 5px;
 }

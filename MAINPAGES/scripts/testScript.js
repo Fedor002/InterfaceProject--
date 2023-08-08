@@ -18,44 +18,101 @@ vidgetLine.addEventListener("click", function(event){
     }
 })
 
+var sortDirection = "asc"; // По умолчанию сортировка по возрастанию
+
 
 // Ежедневник
 function sortTable(columnIndex) {
-    var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("myTable");
-    switching = true;
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+
+  while (switching) {
+    switching = false;
+    rows = table.rows;
     
-    while (switching) {
-      switching = false;
-      rows = table.rows;
-      
-      for (i = 1; i < (rows.length - 1); i++) {
-        shouldSwitch = false;
-        x = rows[i].getElementsByTagName("td")[columnIndex];
-        y = rows[i + 1].getElementsByTagName("td")[columnIndex];
-  
-        // Для сортировки даты рождения предварительно преобразуем строку в объект Date
-        if (columnIndex === 3) {
-          x = new Date(x.innerHTML);
-          y = new Date(y.innerHTML);
-        } else {
-          x = x.innerHTML;
-          y = y.innerHTML;
-        }
-  
-        // Сравниваем значения и меняем их местами при необходимости
-        if (x > y) {
-          shouldSwitch = true;
-          break;
-        }
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[columnIndex];
+      y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+      // Для сортировки даты рождения предварительно преобразуем строку в объект Date
+      if (columnIndex === 3) {
+        x = new Date(x.innerHTML);
+        y = new Date(y.innerHTML);
+      } else {
+        x = x.innerHTML;
+        y = y.innerHTML;
       }
       
-      if (shouldSwitch) {
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
+      // Сравниваем значения в зависимости от направления сортировки
+      if (sortDirection === "asc" && x > y) {
+        shouldSwitch = true;
+        break;
+      } else if (sortDirection === "desc" && x < y) {
+        shouldSwitch = true;
+        break;
       }
     }
+    
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
   }
+
+  // Изменяем направление сортировки после каждого клика
+  if(sortDirection === "asc"){
+    sortDirection = "desc";
+  }
+  else{
+    sortDirection = "asc";
+  }
+}
+
+function sortTableWorker(columnIndex) {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTableWorker");
+  switching = true;
+
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[columnIndex];
+      y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+      // Для сортировки даты рождения предварительно преобразуем строку в объект Date
+      
+      x = x.innerHTML;
+      y = y.innerHTML;    
+      
+      // Сравниваем значения в зависимости от направления сортировки
+      if (sortDirection === "asc" && x > y) {
+        shouldSwitch = true;
+        break;
+      } else if (sortDirection === "desc" && x < y) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+
+  // Изменяем направление сортировки после каждого клика
+  if(sortDirection === "asc"){
+    sortDirection = "desc";
+  }
+  else{
+    sortDirection = "asc";
+  }
+}
 
 const ezhednevnik = document.querySelector('.firstBlock');
 var lastClickedRow = null;
