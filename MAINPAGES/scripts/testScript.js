@@ -140,3 +140,29 @@ ezhednevnik.addEventListener("click", function(event){
     }
   }
 })
+
+
+const projects = document.querySelectorAll('.project');
+
+projects.forEach((project) => {
+  const subProjects = project.querySelectorAll('.sub-projects');
+  subProjects.forEach((subProject)=>{
+    var tbodyTest = subProject.querySelector('tbody');
+    var tbodyTr = tbodyTest.querySelectorAll('tr');
+    tbodyTr.forEach((indivTr) =>{
+      var progressBar = indivTr.querySelector("#progressBar");
+      var progressValue = indivTr.querySelector("#progressValue");
+      // Получаем заданное значение прогресса из span
+      var value = parseInt(progressValue.innerText, 10);
+    
+      // Устанавливаем значение атрибута value элемента progress
+      progressBar.value = value;
+
+    })
+
+    project.addEventListener('click', () => {
+      subProject.classList.toggle('active');
+    });
+  })
+
+});
