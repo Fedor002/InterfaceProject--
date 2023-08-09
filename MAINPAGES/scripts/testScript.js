@@ -141,12 +141,16 @@ ezhednevnik.addEventListener("click", function(event){
   }
 })
 
+// План выполнения
+
 
 const projects = document.querySelectorAll('.project');
 
 projects.forEach((project) => {
   const subProjects = project.querySelectorAll('.sub-projects');
   subProjects.forEach((subProject)=>{
+    var sum = 0;
+    var count = 0;
     var tbodyTest = subProject.querySelector('tbody');
     var tbodyTr = tbodyTest.querySelectorAll('tr');
     tbodyTr.forEach((indivTr) =>{
@@ -154,11 +158,21 @@ projects.forEach((project) => {
       var progressValue = indivTr.querySelector("#progressValue");
       // Получаем заданное значение прогресса из span
       var value = parseInt(progressValue.innerText, 10);
+      sum += value;
+      count++;
     
       // Устанавливаем значение атрибута value элемента progress
       progressBar.value = value;
 
     })
+
+    var progressWhole = project.querySelector('#progressWhole');
+
+    // Вычисляем среднее значение
+    var average = Math.round(sum / count,0);
+
+    // Устанавливаем среднее значение в атрибут value элемента progress
+    progressWhole.value = average;
 
     project.addEventListener('click', () => {
       subProject.classList.toggle('active');
@@ -166,3 +180,70 @@ projects.forEach((project) => {
   })
 
 });
+
+// Финансы
+
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Год', 'В теории', 'По факту'],
+    ['2020', 2000, 2143],
+    ['2021', 2150, 2087],
+    ['2022', 2100, 2108]
+   ]);
+   var options = {
+    title: 'Статистика выполнения поланов',
+    hAxis: {title: 'Год'},
+    vAxis: {title: 'Кол-во выполненых планов'}
+   };
+   var chart = new google.visualization.ColumnChart(document.getElementById('moneyGain'));
+   chart.draw(data, options);
+   var n = document.querySelector('#moneyGain');
+   var n1 = n.querySelector('div');
+   var n2 = n1.querySelector('div');
+   var n3 = n2.querySelector('div');
+   var n4 = n3.querySelector('svg');
+   n4.style.overflow = 'visible';
+
+   var data = google.visualization.arrayToDataTable([
+    ['Год', 'В теории', 'По факту'],
+    ['2020', 300, 313],
+    ['2021', 400, 378],
+    ['2022', 450, 449]
+   ]);
+   var options = {
+    title: 'Посещяемость',
+    hAxis: {title: 'Год'},
+    vAxis: {title: 'Зафиксированно в целом'}
+   };
+   var chart = new google.visualization.ColumnChart(document.getElementById('attendance'));
+   chart.draw(data, options);
+   var n = document.querySelector('#attendance');
+   var n1 = n.querySelector('div');
+   var n2 = n1.querySelector('div');
+   var n3 = n2.querySelector('div');
+   var n4 = n3.querySelector('svg');
+   n4.style.overflow = 'visible';
+
+  var data = google.visualization.arrayToDataTable([
+    ['Пол', 'Процент'],
+    ['М',     78.05],
+    ['Ж', 21.95]
+  ]);
+  var options = {
+    title: 'Соотношение М к М',
+    is3D: true,
+    pieResidueSliceLabel: 'Нету данных'
+  };
+  var chart = new google.visualization.PieChart(document.getElementById('MtoW'));
+  chart.draw(data, options);
+
+  var n = document.querySelector('#MtoW');
+   var n1 = n.querySelector('div');
+   var n2 = n1.querySelector('div');
+   var n3 = n2.querySelector('div');
+   var n4 = n3.querySelector('svg');
+   n4.style.overflow = 'visible';
+
+}

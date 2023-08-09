@@ -706,3 +706,25 @@ hr{
   .projects.active, .sub-projects.active {
     display: block;
   }
+
+/* Финансы */
+.finenceBlock{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+#MtoW, #moneyGain, #attendance{
+    height: 40%;
+}
+
+#MtoW svg{
+    
+}
+
+svg{
+    overflow: visible;
+}

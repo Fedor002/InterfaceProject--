@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="https://www.google.com/jsapi"></script>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap">
     <title>Karta</title>
@@ -125,6 +126,7 @@
             <!--Область окон-->
             <div class="vidgetContext">
                 <div class="funcDiscription1" id="wnd1">
+                  <!-- Схема цеха -->
                   <span class="blockName">Схема цеха</span>
                   <p class="tsech№">Цех №2:</p>
                   <hr style="margin-left: 10px;"/>
@@ -163,14 +165,22 @@
                 </div>
                   
                 </div>
-                <div class="funcDiscription2" id="wnd2"></div>
+                <div class="funcDiscription2" id="wnd2">
+                  <!-- Финансы-->
+                  <div class="finenceBlock">
+                    <div id="MtoW"></div>
+                    <div id="moneyGain"></div>
+                    <div id="attendance"></div>
+                  </div>
+
+                </div>
                 <div class="funcDiscription3" id="wnd3">
                   <!-- Список планов -->
                   <div class="workshops">
                     <div class="workshop">
                       <ul class="projects">
                         <li class="project">
-                          План №3
+                          План №3 <progress id="progressWhole" value="0" max="100"></progress>
                           <!-- Выполнение заказаов -->
                           <table class="sub-projects">
                             <thead>
@@ -199,7 +209,7 @@
                           </table>
                         </li>
                         <li class="project">
-                          План №4
+                          План №4 <progress id="progressWhole" value="0" max="100"></progress>
                           <!-- Выполнение заказаов -->
                           <table class="sub-projects">
                             <thead>
@@ -219,7 +229,8 @@
                             </tbody>
                           </table>
                         </li>
-                        <li class="project">План №5
+                        <li class="project">
+                          План №5 <progress id="progressWhole" value="0" max="100"></progress>
                           <!-- Выполнение заказаов -->
                           <table class="sub-projects">
                             <thead>
@@ -243,7 +254,7 @@
                       </ul>
                     </div>
                   </div>
-                  
+
                 </div>
                 <div class="funcDiscription4" id="wnd4">
                   <!-- Таблица работников -->
