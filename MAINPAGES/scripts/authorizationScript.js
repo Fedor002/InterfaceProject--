@@ -22,12 +22,13 @@ function simulateTyping(element, text, speed = 100) {
 // Запускаем анимацию при загрузке страницы
 window.onload = function () {
   // Запускаем анимацию для поля логина
-  simulateTyping(loginField, loginValue);
-
+  setTimeout(function () {
+    simulateTyping(loginField, loginValue);
+  }, 1500); 
   // Запускаем анимацию для поля пароля после небольшой паузы
   setTimeout(function () {
     simulateTyping(passwordField, passwordValue);
-  }, 1500); // Измените эту паузу (в миллисекундах) в зависимости от вашего желания
+  }, 3500); // Измените эту паузу (в миллисекундах) в зависимости от вашего желания
 };
 
 const loginButton = document.querySelector(".login-button");
@@ -38,9 +39,37 @@ function highlightButton() {
 }
 
 // Запускаем функцию с задержкой в 3 секунды после загрузки страницы
-setTimeout(highlightButton, 3000);
+setTimeout(highlightButton, 5000);
 // Функция для автоматического перехода по ссылке через 3 секунды
 function redirectToRent() {
   window.location.href = 'Director.html';
 }
-setTimeout(redirectToRent, 4000);
+// setTimeout(redirectToRent, 5500);
+
+
+
+// курсор
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cursor = document.querySelector('.cursor');
+  const target = document.querySelector('.login-button');
+
+  cursor.style.display = 'block';
+
+  const targetRect = target.getBoundingClientRect();
+  const targetX = targetRect.left + targetRect.width / 2;
+  const targetY = targetRect.top + targetRect.height / 2;
+
+  const cursorAnimation = cursor.animate([
+    { transform: `translate(${targetX}px, ${targetY}px) scale(1)` },
+    { transform: 'translate(0, 0) scale(0.5)' }
+  ], {
+    duration: 8000,
+    easing: 'ease-in-out',
+    fill: 'forwards'
+  });
+
+  cursorAnimation.onfinish = function() {
+    cursor.style.display = 'none';
+  };
+});
