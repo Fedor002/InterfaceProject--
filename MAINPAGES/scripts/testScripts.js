@@ -192,6 +192,9 @@ tsechMap.addEventListener("click", function(event){
       if(indivTr.children[2].innerHTML !== clickedEquipment.id){
         indivTr.style.display = 'none';
       }
+      else{
+        indivTr.style.display = 'table-row';
+      }
     });
 
 

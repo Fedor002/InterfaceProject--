@@ -687,6 +687,7 @@ hr{
 .tsechDiscription{
     display: none;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .tsechDiscription.activeBlock{
