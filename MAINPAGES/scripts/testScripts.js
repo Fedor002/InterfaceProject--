@@ -114,6 +114,7 @@ function sortTableWorker(columnIndex) {
   }
 }
 
+//Развертка описания при нажатии на строку столбца
 const ezhednevnik = document.querySelector('.firstBlock');
 var lastClickedRow = null;
 
@@ -141,10 +142,91 @@ ezhednevnik.addEventListener("click", function(event){
   }
 })
 
+//Развертка описания при нажатии на оборудование цеха
+const tsechMap = document.querySelector('.wholePlan');
+var lastClickedEquipment = null;
+const tsechDiscription = document.querySelector('.tsechDiscription')
+
+tsechMap.addEventListener("click", function(event){
+  var clickedEquipment = event.target.closest('.lineOfEquipment .equipmentIcon');
+
+  for (var i = tsechDiscription.children.length - 1; i >= 0; i--) {
+    tsechDiscription.classList.remove('activeBlock');
+}
+
+  if (clickedEquipment) {
+    if (clickedEquipment === lastClickedEquipment) {
+      // Повторное нажатие на строку
+      document.querySelector('.wholePlan').style.width = "100%";
+      tsechDiscription.classList.remove('activeBlock');
+      lastClickedEquipment = null;
+      } 
+    else {
+      // event.target.closest('button').classList.add('activeButton');
+      document.querySelector('.wholePlan').style.width = "70%";
+      tsechDiscription.classList.add('activeBlock');
+      lastClickedEquipment = clickedEquipment;
+    }
+  }
+});
+
+const projectsWhole = document.querySelectorAll('.projects');
+
+tsechMap.addEventListener("click", function(event){
+  tsechDiscription.querySelector('.equipmentInfo').innerHTML = "Оброудование номер -";
+  var clickedEquipment = event.target.closest('.lineOfEquipment .equipmentIcon');
+  tsechDiscription.querySelector('.equipmentInfo').innerHTML = tsechDiscription.querySelector('.equipmentInfo').innerHTML  + ` ${clickedEquipment.innerHTML}`;
+
+  tsechDiscription.querySelector('.brigade№').innerHTML = "Бригада номер -";
+  tsechDiscription.querySelector('.brigade№').innerHTML = tsechDiscription.querySelector('.brigade№').innerHTML  + ` ${clickedEquipment.id}`;
+
+
+  const projects = projectsWhole[1].querySelectorAll('.project');
+
+  projects.forEach((project) => {
+  const subProjects = project.querySelectorAll('.sub-projects');
+  subProjects.forEach((subProject)=>{
+    var tbodyTest = subProject.querySelector('tbody');
+    var tbodyTr = tbodyTest.querySelectorAll('tr');
+    tbodyTr.forEach((indivTr) =>{
+      if(indivTr.children[2].innerHTML !== clickedEquipment.id){
+        indivTr.style.display = 'none';
+      }
+    });
+
+
+    project.addEventListener('click', () => {
+      subProject.classList.toggle('active');
+    });
+  })
+
+});
+
+  tsechDiscription.querySelector('.equipmentStatus').innerHTML = "Статус оборудования -";
+    // Получить вычисленные стили элемента
+    var styles = window.getComputedStyle(clickedEquipment);
+
+    // Получить значение background-color
+    var backgroundColor = styles.backgroundColor;
+  if(backgroundColor == "rgb(251, 97, 97)"){
+    tsechDiscription.querySelector('.equipmentStatus').innerHTML = tsechDiscription.querySelector('.equipmentStatus').innerHTML  + ` Не работает`;
+  }
+  else   if(backgroundColor == "rgb(254, 244, 6)"){
+    tsechDiscription.querySelector('.equipmentStatus').innerHTML = tsechDiscription.querySelector('.equipmentStatus').innerHTML  + ` Остановлен`;
+  }
+  else   if(backgroundColor == "rgb(113, 220, 123)"){
+    tsechDiscription.querySelector('.equipmentStatus').innerHTML = tsechDiscription.querySelector('.equipmentStatus').innerHTML  + ` Работает`;
+  }
+  else{
+    tsechDiscription.querySelector('.equipmentStatus').innerHTML = tsechDiscription.querySelector('.equipmentStatus').innerHTML  + ` Не известно`;  
+  }
+
+});
+
 // План выполнения
 
 
-const projects = document.querySelectorAll('.project');
+const projects = projectsWhole[0].querySelectorAll('.project');
 
 projects.forEach((project) => {
   const subProjects = project.querySelectorAll('.sub-projects');
@@ -164,7 +246,7 @@ projects.forEach((project) => {
       // Устанавливаем значение атрибута value элемента progress
       progressBar.value = value;
 
-    })
+    });
 
     var progressWhole = project.querySelector('#progressWhole');
 
@@ -173,6 +255,10 @@ projects.forEach((project) => {
 
     // Устанавливаем среднее значение в атрибут value элемента progress
     progressWhole.value = average;
+
+    if(project.querySelector('span').innerHTML === document.querySelector('.wholePlan .WhichPlan').innerHTML){
+      document.querySelector('.wholePlan #progressWhole').value = average;
+    }
 
     project.addEventListener('click', () => {
       subProject.classList.toggle('active');
@@ -250,3 +336,4 @@ function drawChart() {
    n4.style.scale = '0.8';
 
 }
+

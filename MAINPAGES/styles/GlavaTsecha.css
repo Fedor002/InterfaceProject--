@@ -657,7 +657,7 @@ hr{
 }
 
 .TsekhMap{
-    width: 175%;
+    width: 985px;
     padding: 20px;
     height: 80%;
     margin: auto;
@@ -679,6 +679,30 @@ hr{
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
+
+.wholePlan{
+    width: 100%;    
+}
+
+.tsechDiscription{
+    display: none;
+    font-size: 20px;
+}
+
+.tsechDiscription.activeBlock{
+    display: block;
+    width: 40%;
+}
+
+.display-flex{
+    display: flex;
+}
+
+.WhichPlan{
+    font-size: 18px;
+    padding-left: 25px;
+}
+
 /* План выполнения заказов */
 .workshop {
     margin-bottom: 20px;
