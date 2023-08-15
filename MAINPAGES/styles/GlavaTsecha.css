@@ -660,7 +660,6 @@ hr{
     width: 985px;
     padding: 20px;
     height: 80%;
-    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
