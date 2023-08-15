@@ -175,9 +175,10 @@ const projectsWhole = document.querySelectorAll('.projects');
 tsechMap.addEventListener("click", function(event){
   tsechDiscription.querySelector('.equipmentInfo').innerHTML = "Оброудование номер -";
   var clickedEquipment = event.target.closest('.lineOfEquipment .equipmentIcon');
-  tsechDiscription.querySelector('.equipmentInfo').innerHTML = tsechDiscription.querySelector('.equipmentInfo').innerHTML  + ` ${clickedEquipment.innerHTML}`;
+  try{
+    tsechDiscription.querySelector('.equipmentInfo').innerHTML = tsechDiscription.querySelector('.equipmentInfo').innerHTML  + ` ${clickedEquipment.innerHTML}`;
 
-  tsechDiscription.querySelector('.brigade№').innerHTML = "Бригада номер -";
+    tsechDiscription.querySelector('.brigade№').innerHTML = "Бригада номер -";
   tsechDiscription.querySelector('.brigade№').innerHTML = tsechDiscription.querySelector('.brigade№').innerHTML  + ` ${clickedEquipment.id}`;
 
 
@@ -186,6 +187,7 @@ tsechMap.addEventListener("click", function(event){
   projects.forEach((project) => {
   const subProjects = project.querySelectorAll('.sub-projects');
   subProjects.forEach((subProject)=>{
+    subProject.classList.remove('active');
     var tbodyTest = subProject.querySelector('tbody');
     var tbodyTr = tbodyTest.querySelectorAll('tr');
     tbodyTr.forEach((indivTr) =>{
@@ -197,9 +199,16 @@ tsechMap.addEventListener("click", function(event){
       }
     });
 
-
+    var checkAction = 0;
     project.addEventListener('click', () => {
-      subProject.classList.toggle('active');
+      if(checkAction ===0){
+        subProject.classList.add('active');
+        checkAction+=1;
+      }
+      else{
+        subProject.classList.remove('active');
+        checkAction = 0;
+      }
     });
   })
 
@@ -222,6 +231,12 @@ tsechMap.addEventListener("click", function(event){
   }
   else{
     tsechDiscription.querySelector('.equipmentStatus').innerHTML = tsechDiscription.querySelector('.equipmentStatus').innerHTML  + ` Не известно`;  
+  }
+  }
+  catch(e){
+    document.querySelector('.wholePlan').style.width = "100%";
+    tsechDiscription.classList.remove('activeBlock');
+    lastClickedEquipment = null;
   }
 
 });

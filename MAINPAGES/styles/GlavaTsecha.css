@@ -664,6 +664,7 @@ hr{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .blockName{
@@ -731,6 +732,10 @@ hr{
   }
 
   .projects.active, .sub-projects.active {
+    display: grid;
+  }
+
+ .sub-projects .active {
     display: grid;
   }
 
