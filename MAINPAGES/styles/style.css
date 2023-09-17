@@ -1,16 +1,20 @@
 .h-1 {
-  font-family: "RobotoFlex", sans-serif; /* Шрифт RobotoFlex */
-  font-size: 36px; /* Размер шрифта 36px */
-  color: white; /* Белый цвет шрифта */
-  text-align: center; /* Выравнивание текста по центру */
-  margin-top: 120px; /* Отступ от верха 320px */
+  font-family: "RobotoFlex", sans-serif;
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  margin-top: 120px;
+  letter-spacing: 2px; /* Добавляем небольшое расстояние между буквами */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Более сглаженная тень для обводки */
 }
+
 .p {
-  font-family: "RobotoFlex", sans-serif; /* Шрифт RobotoFlex */
-  font-size: 24px; /* Размер шрифта 24px */
-  color: gray; /* Серый цвет шрифта */
-  text-align: center; /* Выравнивание текста по центру */
-  margin-top: 30px; /* Отступ от верхней надписи в 50px */
+  font-family: "RobotoFlex", sans-serif;
+  font-size: 20px;
+  color: #525050;
+  text-align: center;
+  margin-top: 30px;
+  line-height: 1.5; /* Увеличиваем межстрочное расстояние для удобства чтения */
 }
 
 .text-wrapper {
@@ -46,74 +50,89 @@ body {
 
 
 }
-
+.logo-vidget-container {
+  display: flex;
+  align-items: center;
+}
 
 .logo {
   /* Укажите размеры вашего логотипа */
-  width: 50px;
-  height: 70px;
+  width: 20px;
+  height: 40px;
   
   /* Добавляем отступы слева и сверху */
-  margin-top: 20px;
-  margin-left: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .logo-2 {
   /* Укажите размеры вашего логотипа */
-  width: 50px;
-  height: 70px;
-  top: 20px;
-  right: 40px;
-  position:  absolute;
+  width: 20px;
+  height: 40px;
+
+  /* Установите позицию на абсолютную */
+  position: absolute;
+
+  /* Выравнивание по правому краю */
+  right: 0;
+
+  /* Добавьте отступ сверху и справа, если необходимо */
+  margin-top: 10px;
+  margin-right: 20px;
   
   /* Добавляем отступы слева и сверху */
 
 }
 .view-2 {
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Выравнивание текста по центру */
-  margin-top: 30px; /* Отступ сверху 30px */
-
+  text-align: center;
+  margin-top: 30px;
 }
+
 .login-field,
 .password-field {
   display: block;
-  margin-top: 30px;
-  width: 300px; /* Задаем ширину полей ввода */
-  height: 30px; /* Задаем высоту полей ввода */
-  font-family: "RobotoFlex", sans-serif; /* Шрифт RobotoFlex */
-  font-size: 18px; /* Размер шрифта 18px */
-  padding: 5px 10px; /* Добавляем внутренние отступы для текста внутри поля */
-  border-radius: 10px; /* Скругление углов поля */
-
+  margin-top: 15px;
+  width: 300px;
+  height: 30px;
+  font-family: "RobotoFlex", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease-in-out;
 }
-.login-button{
-margin-top: 30px;
-width: 320px; /* Задаем ширину полей ввода */
-height: 40px; /* Задаем высоту полей ввода */
-font-family: "RobotoFlex", sans-serif; /* Шрифт RobotoFlex */
-font-size: 18px; /* Размер шрифта 18px */
-padding: 5px 10px; /* Добавляем внутренние отступы для текста внутри поля */
-border-radius: 10px; /* Скругление углов поля */
-/* Новые стили для кнопки "Вход" */
-  background-color: #aaa; /* Серый цвет фона */
-  color: #fff; /* Белый цвет текста */
-  border: none; /* Убираем границу */
-  cursor: pointer; /* Делаем курсор при наведении */
 
+.login-field:focus,
+.password-field:focus {
+  outline: none;
+  border-color: #66afe9;
 }
+
+.login-button {
+  margin-top: 20px;
+  width: 320px;
+  height: 50px;
+  font-family: "RobotoFlex", sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #66afe9;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
 .login-button:hover {
-  background-color: green; /* Серый цвет фона при наведении */
+  background-color: #4cae4c;
 }
-/* ... Ваши стили ... */
-.login-button-highlight {
-  background-color: green; /* Новый цвет фона при подсветке */
-}
-.password-field {
-  margin-top: 30px; /* Отступ сверху 30px */
+
+.login-button.highlight {
+  background-color: #4cae4c;
 }
 
 /*№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ Страница директора*№№№№№№№№№№№№№№№№№№№/
@@ -195,90 +214,70 @@ border-radius: 10px; /* Скругление углов поля */
 
 }
 /*№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ Стили панели виджетов*№№№№№№№№№№№№№№№№№№№*/
-.vidgetLine{
-  display: flex;
-  padding: 1% 0px 0px 3%;
-  gap: 20px;
-}
-
-.vidgetLine button{
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border: 2.5px solid black;
-  border-radius: 10px;
-}
-
-.vidgetContext{
-  width: 95%;
-  height: 80%;
-  margin: auto;
-  padding-top: 15px;
-  overflow: hidden;
-}
-
-.vidgetLine .activeButton{
-  background-color: #71DC7B;
-}
-
-.vidgetContext .activeBlock{
-  display: block;
-}
-
-.proizvodstvoImg{
-  scale: 1;
-  width: 143.5%;
-  height: 100%;
-  right: 5px;
-  bottom: 0px;
-  position: relative;
-}
-
-.financeImg{
-  scale: 1;
-  width: 143.5%;
-  height: 100%;
-  right: 5px;
-  bottom: 0px;
-  position: relative;
-}
-
-.planirovanieImg{
-  scale: 1;
-  width: 143.5%;
-  height: 100%;
-  right: 5px;
-  bottom: 0px;
-  position: relative;
-}
-
-.personalImg{
-  scale: 1;
-  width: 143.5%;
-  height: 100%;
-  right: 5px;
-  bottom: 0px;
-  position: relative;
-}
-
-.ezhednevnikImg{
-  scale: 1;
-  width: 143.5%;
-  height: 100%;
-  right: 5px;
-  bottom: 0px;
-  position: relative;
-}
-/*№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ Стили пользователя*№№№№№№№№№№№№№№№№№№№*/
-.user-profile {
+.vidgetLine {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 10px;
-  position: absolute;
-  top: 10px;
-  right: 130px; /* Позиция слева от logo-2 */
+  gap: 10px;
+  margin-left: 20px;
 }
+
+.vidgetLine button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Добавляем анимацию для opacity */
+  color: #5c5b5b;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative; /* Добавляем относительное позиционирование */
+}
+
+.vidgetLine button:before {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Расположение полоски под кнопкой */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #5162fc; /* Цвет полоски */
+  opacity: 0; /* Изначально полоска невидима */
+  transition: opacity 0.3s ease; /* Добавляем анимацию для opacity */
+}
+
+.vidgetLine button:hover {
+  color: #555;
+  transform: scale(1.1);
+}
+
+.vidgetLine button.activeButton {
+  color: #5162fc; /* Изменяем цвет текста для активной кнопки */
+}
+
+.vidgetLine button.activeButton:before {
+  opacity: 1; /* Показываем полоску при активации кнопки */
+}
+/* 
+.proizvodstvoImg,
+.financeImg,
+.planirovanieImg,
+.personalImg,
+.ezhednevnikImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease; 
+}
+
+.vidgetLine button:hover .proizvodstvoImg,
+.vidgetLine button:hover .financeImg,
+.vidgetLine button:hover .planirovanieImg,
+.vidgetLine button:hover .personalImg,
+.vidgetLine button:hover .ezhednevnikImg {
+  transform: scale(1.1); 
+} */
+/*№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ Стили пользователя*№№№№№№№№№№№№№№№№№№№*/
+
 
 .avatar {
   width: 40px;
@@ -290,13 +289,14 @@ border-radius: 10px; /* Скругление углов поля */
 .user-name {
   font-family: "RobotoFlex", sans-serif;
   font-size: 16px;
-  color: #686868; /* Цвет имени пользователя */
-  
+  color: #1f1e1e; /* Цвет имени пользователя */
+  white-space: nowrap;
+  padding-left:10px;
 }
 .chevron-icon {
   width: 20px; /* Ширина иконки */
-  height: 20px; /* Высота иконки */
-  margin-left: 5px; /* Отступ слева от имени пользователя */
+  height: 10px; /* Высота иконки */
+  margin-left: 10px; /* Отступ слева от имени пользователя */
 }
 .settings-icon {
   width: 20px; /* Ширина левого изображения */
@@ -336,7 +336,7 @@ border-radius: 10px; /* Скругление углов поля */
    max-width: 1920px; /* Максимальная ширина контейнера */
   max-height: 1080px; /* Максимальная высота контейнера */
    min-height: 640px; /* Максимальная высота контейнера */
-    min-widtht: 1480px; /* Максимальная высота контейнера */
+
   width: 90%;
   height: 80%;
   margin-left: 100px; /* Ширина сайдбара + отступ слева */
@@ -429,26 +429,22 @@ border-radius: 10px; /* Скругление углов поля */
     }
 
 
-.workshop-name {
-  font-weight: bold;
-  margin-bottom: 5px;
-   font-size: 18px;
-}
+
 
 .workshop-employees {
   color: gray;
   text-stroke: 1px white; /* Внешняя обводка */
 }
 .workshop-green {
-  background-color: green; /* Зеленый цех */
+  background-color: rgb(162, 245, 162); /* Зеленый цех */
 }
 
 .workshop-red {
-  background-color: red; /* Красный цех */
+  background-color: rgb(243, 141, 141); /* Красный цех */
 }
 
 .workshop-yellow {
-  background-color: yellow; /* Желтый цех */
+  background-color: rgb(248, 248, 140); /* Желтый цех */
 }
 
 .topBar{
@@ -497,29 +493,7 @@ border-radius: 10px; /* Скругление углов поля */
   width: 100%;
 }
 
-.ProjectMap .lineOfProject:nth-child(2){
 
-  .equipmentIcon:nth-child(2){
-      margin-left: 54vh;
-  }
-
-}
-
-.ProjectMap .lineOfProject:nth-child(3){
-
-  .equipmentIcon:nth-child(2){
-      margin-left: 27vh;
-  }
-
-}
-
-.ProjectMap .lineOfProject:nth-child(4){
-
-  .equipmentIcon:nth-child(1){
-      margin-left: 27vh;
-  }
-
-}
 
 /*№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№ Стили  Задачи*№№№№№№№№№№№№№№№№№№№№№№№№№№/ */
 
@@ -571,7 +545,8 @@ border-radius: 10px; /* Скругление углов поля */
   margin-bottom: 0.15rem;
   position: relative;
   cursor: pointer;
-  height: 2rem;
+  height: 50px;
+
 }
 
 .dropdown1 {
@@ -590,7 +565,7 @@ border-radius: 10px; /* Скругление углов поля */
   border: none;
   cursor: pointer;
   width: 20rem;
-  height: 3rem;
+  height: 20px;
 }
 
 .dropdown-content1 {
@@ -648,7 +623,9 @@ border-radius: 10px; /* Скругление углов поля */
   font-size: large;
 }
 .TaskBasicText{
-  font-size: large;
+  font-size: 16px;
+  white-space: nowrap;
+  padding-left: 10px;
 }
 .WhiteTask{
   background-color: white;
@@ -658,10 +635,7 @@ border-radius: 10px; /* Скругление углов поля */
   background-color: #71DC7B;
   border-color: #71DC7B;
 }
-.YellowTask{
-  background-color: #FEF406;
-  border-color: #FEF406;
-}
+
 .RedTask{
   background-color: #FB6161;
   border-color: #FB6161;

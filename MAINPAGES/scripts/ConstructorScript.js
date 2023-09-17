@@ -1,8 +1,9 @@
 
+// Размер виджета
 function setupWidget(widgetId) {
   const widget = document.getElementById(widgetId);
   const resizeHandle = widget.querySelector('.resize-handle');
-  
+
   const widgetHeader = widget.querySelector('.widget-header');
   const closeButton = widget.querySelector('.close-button');
 
@@ -27,7 +28,6 @@ function setupWidget(widgetId) {
     initialY = e.clientY - parseFloat(getComputedStyle(widget).top); // Store initial cursor position for dragging
     e.preventDefault();
   });
-  
 
   document.addEventListener('mousemove', (e) => {
     if (isResizing) {
@@ -53,12 +53,59 @@ function setupWidget(widgetId) {
   });
 }
 
-const widgetIds = ['widget1', 'widget2', 'widget3', 'widget4','widgetChat','widgetGraph'];
+const widgetIds = ['widget1', 'widget2', 'widget3'];
 
 widgetIds.forEach(widgetId => {
   setupWidget(widgetId);
 });
 
+// // Панель виджетов
+// const widgetIcons = document.querySelectorAll('.func');
+// const widgets = document.querySelectorAll('.resizable-widget');
+//
+// widgetIcons.forEach(icon => {
+//   const widgetId = icon.getAttribute('data-widget');
+//   const widget = document.getElementById(widgetId);
+//
+//   icon.addEventListener('click', () => {
+//     if (widget.style.display === 'none' || widget.style.display === "") {
+//       widget.style.display = 'block';
+//     } else {
+//       widget.style.display = 'none';
+//     }
+//   });
+// });
+//
+// const widgetButtons = document.querySelectorAll('.widget-header button');
+//
+// widgetButtons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     const widgetContainer = button.closest('.widget-container');
+//     const widgets = widgetContainer.querySelectorAll('.resizable-widget');
+//
+//     widgets.forEach(widget => {
+//       widget.classList.remove('active-widget');
+//     });
+//
+//     const widget = button.closest('.resizable-widget');
+//     widget.classList.add('active-widget');
+//   });
+// });
+//
+// const buttons = document.querySelectorAll('.func');
+//
+// buttons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     if (button.classList.contains('activeButton')) {
+//       button.classList.remove('activeButton');
+//     } else {
+//       button.classList.add('activeButton');
+//     }
+//   });
+// });
+
+
+//чат
 
 
 
@@ -99,10 +146,8 @@ function getRowData(index) {
       content: 'Содержимое второй строки...'
     };
   }
-
+  // И так далее...
 }
-
-//Выпадающий список работников
 
 const rowStates = {};
 
@@ -160,12 +205,14 @@ $(document).ready(function() {
 
   // И так далее...
 });
+//Сортировка 
 
+// Ежедневник
 
 // План выполнения
 
 
-const projects = document.querySelectorAll('.plan');
+const projects = document.querySelectorAll('.project');
 
 projects.forEach((project) => {
   const subProjects = project.querySelectorAll('.sub-projects');
@@ -196,11 +243,12 @@ projects.forEach((project) => {
     progressWhole.value = average;
 
     project.addEventListener('click', () => {
-      subProject.classList.toggle('visible');
+      subProject.classList.toggle('active');
     });
   })
 
 });
+
 // скрипт выбора элементов в выпадающем меню
 // Находим выпадающий список
 const widgetSelect = document.getElementById('widget-select');
@@ -221,88 +269,23 @@ widgetSelect.addEventListener('change', function () {
 
 
 
-const initialWidgetState = {};
-// Функция для разворачивания виджета на весь экран
-function expandWidget(widgetId) {
-  const widget = document.getElementById(widgetId);
-
-  // Сохраняем начальные размеры и положение виджета перед раскрытием
-  initialWidgetState[widgetId] = {
-    width: widget.style.width,
-    height: widget.style.height,
-    top: widget.style.top,
-    left: widget.style.left,
-  };
-
-  // Устанавливаем новые размеры и положение для раскрытого виджета
-  widget.classList.add('expanded');
-  widget.style.width = '100%';
-  widget.style.height = '100%';
-  widget.style.top = '0';
-  widget.style.left = '0';
-  // Другие стили раскрытого виджета
-}
-
-
-
-// Функция для сворачивания виджета обратно в исходное состояние
-function collapseWidget(widgetId) {
-  const widget = document.getElementById(widgetId);
-
-  // Восстанавливаем начальные размеры и положение виджета перед раскрытием
-  const initialState = initialWidgetState[widgetId];
-  if (initialState) {
-    widget.style.width = initialState.width;
-    widget.style.height = initialState.height;
-    widget.style.top = initialState.top;
-    widget.style.left = initialState.left;
-  }
-
-  // Удаляем запись о начальном состоянии
-  delete initialWidgetState[widgetId];
-
-  // Убираем класс раскрытия
-  widget.classList.remove('expanded');
-  // Другие стили для свернутого виджета
-}
-//bcghfddktybz
-// Функция для переключения состояния виджета при клике на кнопку
-function toggleFullscreen(widgetId) {
-  const widget = document.getElementById(widgetId);
-
-  if (widget.classList.contains('expanded')) {
-    collapseWidget(widgetId);
-  } else {
-    expandWidget(widgetId);
-  }
-
-
-}
-
-// Назначаем обработчик клика на кнопку разворачивания/сворачивания
-const uncollapseButtons = document.querySelectorAll('.uncollapse-button');
-
-uncollapseButtons.forEach(button => {
-  const widgetId = button.closest('.resizable-widget').id;
-  button.addEventListener('click', () => {
-    toggleFullscreen(widgetId);
-  });
-});
-
-
-//Изменение z-index при клике по виджету
-const widgets = document.querySelectorAll('.resizable-widget');
-widgets.forEach(widget => {
-  widget.addEventListener('click', () => {
-    // Уберем активное состояние у всех виджетов
-    widgets.forEach(w => {
-      w.style.zIndex = '1'; // Возвращаем z-index в исходное состояние
-    });
-
-    // Устанавливаем активное состояние и повышаем z-index для текущего виджета
-    widget.style.zIndex = '2'; // Изменяем z-index для активного виджета
-  });
-});
-
+////////////////////////////
+// // Получаем все виджеты
+// const widgets = document.querySelectorAll('.resizable-widget');
+//
+// // Добавляем обработчик клика для каждого виджета
+// widgets.forEach(widget => {
+//   widget.addEventListener('click', () => {
+//     // Удаляем класс "active-widget" у всех виджетов
+//     widgets.forEach(w => {
+//       w.classList.remove('active-widget');
+//     });
+//     // Добавляем класс "active-widget" только к кликнутому виджету
+//     widget.classList.add('active-widget');
+//
+//     // Устанавливаем z-index активного виджета выше других
+//     widget.style.zIndex = '2';
+//   });
+// });
 
 
